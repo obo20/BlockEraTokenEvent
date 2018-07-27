@@ -1,0 +1,3 @@
+Using network 'ropsten'.
+
+Error: ENOENT: no such file or directory, open '/Users/mattober/Repos/EthereumDev/BlockEra/NEXT2/initiate.js'
