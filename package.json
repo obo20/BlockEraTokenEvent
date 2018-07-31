@@ -66,11 +66,11 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "create-wallets": "truffle exec src/deploy/createWallet.js",
-    "create-wallets.mainnet": "truffle exec src/deploy/createWallet.js --network mainnet",
-    "create-wallets.rinkeby": "truffle exec src/deploy/createWallet.js --network rinkeby",
-    "create-wallets.kovan": "truffle exec src/deploy/createWallet.js --network kovan",
-    "create-wallets.ropsten": "truffle exec src/deploy/createWallet.js --network ropsten"
+    "create-wallets": "truffle exec src/deploy/createWallets.js",
+    "create-wallets.mainnet": "truffle exec src/deploy/createWallets.js --network mainnet",
+    "create-wallets.rinkeby": "truffle exec src/deploy/createWallets.js --network rinkeby",
+    "create-wallets.kovan": "truffle exec src/deploy/createWallets.js --network kovan",
+    "create-wallets.ropsten": "truffle exec src/deploy/createWallets.js --network ropsten"
   },
   "jest": {
     "collectCoverageFrom": [
