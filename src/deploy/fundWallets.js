@@ -1,11 +1,12 @@
-const fs = require('fs');
 const path = require('path');
+require('dotenv').config({path: path.resolve(__dirname, '../../.env')});
+
+const fs = require('fs');
 const FILENAME = path.resolve(__dirname, process.env.OUTPUT_FILENAME);
-const delay = 1.1 * 1000 // 2 seconds
+const delay = 3 * 1000 // 2 seconds
 
 console.log(`Sending One transaction every ${delay / 1000} seconds`);
 
-require('dotenv').config({path: path.resolve(__dirname, '../../.env')});
 
 module.exports = (callback) => {
   let accounts = JSON.parse(fs.readFileSync(FILENAME, {encoding: "utf8"}));
