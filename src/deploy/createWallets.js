@@ -2,6 +2,7 @@ const Wallet = require('ethers').Wallet;
 const fs = require('fs');
 const path = require('path');
 
+
 require('dotenv').config({path: path.resolve(__dirname, '../../.env')});
 
 module.exports = (callback) => {
@@ -24,11 +25,6 @@ module.exports = (callback) => {
       };
       fs.appendFileSync(FILENAME, JSON.stringify(account));
       (index != COLORS.length * NAMES.length) ? fs.appendFileSync(FILENAME, ',') : '';
-      web3.eth.getCoinbase((err, coinbase) => {
-        web3.eth.sendTransaction({from: coinbase, to: wallet.address, value: process.env.INITIAL_WEI}, (err, res) => {
-          if (err) console.error(err)
-        })
-      });
     });
     console.log(`wrote ${NAMES.length} keys to file ${FILENAME}`);
   });
