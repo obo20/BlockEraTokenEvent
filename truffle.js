@@ -21,7 +21,7 @@ module.exports = {
             network_id: "*" // Match any network id
         },
         ropsten:  {
-            provider: new HDWalletProvider(mnemonic, `https://ropsten.infura.io/${process.env.INFURA_API_KEY}`),
+            provider: new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`),
             network_id: 3,
             gas: 698712,
             gasPrice: 65000000000
