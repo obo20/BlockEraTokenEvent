@@ -20,8 +20,14 @@ module.exports = {
             port: 8545,
             network_id: "*" // Match any network id
         },
+        kovan:  {
+            provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`),
+            network_id: 42,
+            gas: 1698712,
+            gasPrice: 65000000000
+        },
         ropsten:  {
-            provider: new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`),
+            provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`),
             network_id: 3,
             gas: 698712,
             gasPrice: 65000000000

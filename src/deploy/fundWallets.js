@@ -3,7 +3,7 @@ require('dotenv').config({path: path.resolve(__dirname, '../../.env')});
 
 const fs = require('fs');
 const FILENAME = path.resolve(__dirname, process.env.OUTPUT_FILENAME);
-const delay = 3 * 1000 // 2 seconds
+const delay = 15 * 1000 // 2 seconds
 
 console.log(`Sending One transaction every ${delay / 1000} seconds`);
 

@@ -21,6 +21,20 @@ const barWallet = nextWallets.find((wallet) => {
 });
 
 //animals
+//new animals
+const nextButterfly = require('./images/butterfly.png');
+const nextRaccoon = require('./images/raccoon.jpg');
+const nextDragon = require('./images/dragon.jpg');
+const nextMoose = require('./images/moose.png');
+const nextShark = require('./images/shark.png');
+const nextGiraffe = require('./images/giraffe.png');
+const nextMouse = require('./images/mouse.png');
+const nextFrog = require('./images/frog.png');
+const nextBat = require('./images/bat.png');
+const nextBear = require('./images/bear.png');
+const nextPig = require('./images/pig.png');
+
+//old animals
 const nextTiger = require('./images/tiger.png');
 const nextElephant = require('./images/elephant.png');
 const nextDog = require('./images/dog.png');
@@ -49,11 +63,6 @@ class App extends Component {
     this.getColorHex = this.getColorHex.bind(this);
     this.getAddressImage = this.getAddressImage.bind(this);
     this.toggleBarFilter = this.toggleBarFilter.bind(this);
-    // this.makePayment = this.makePayment.bind(this);
-    // this.withdrawLoan = this.withdrawLoan.bind(this);
-    // this.collectPayments = this.collectPayments.bind(this);
-    // this.transferLoanOwnership = this.transferLoanOwnership.bind(this);
-    // this.LoanContract = LoanContract;
 
     this.state = {
         blockNumber: startBlock,
@@ -67,18 +76,17 @@ class App extends Component {
     // Get network provider and web3 instance.
     // See utils/getWeb3 for more info.
 
-    getWeb3
-    .then(results => {
-      this.setState({
-        web3: results.web3
-      });
+        getWeb3.then(results => {
+          this.setState({
+            web3: results.web3
+          });
 
-      // Instantiate contract once web3 provided.
-      this.instantiateContract()
-    })
-    .catch(() => {
-      console.log('Error finding web3.')
-    })
+          // Instantiate contract once web3 provided.
+          this.instantiateContract()
+        })
+        .catch(() => {
+          console.log('Error finding web3.')
+        })
     }
 
     instantiateContract() {
@@ -211,6 +219,28 @@ class App extends Component {
                 return nextFarming;
             case 'Digital Wallet Help':
                 return nextWallet;
+            case 'Butterfly':
+                return nextButterfly;
+            case 'Raccoon':
+                return nextRaccoon;
+            case 'Dragon':
+                return nextDragon;
+            case 'Moose':
+                return nextMoose;
+            case 'Shark':
+                return nextShark;
+            case 'Giraffe':
+                return nextGiraffe;
+            case 'Mouse':
+                return nextMouse;
+            case 'Frog':
+                return nextFrog;
+            case 'Bat':
+                return nextBat;
+            case 'Bear':
+                return nextBear;
+            case 'Pig':
+                return nextPig;
             case 'Tiger':
                 return nextTiger;
             case 'Elephant':
