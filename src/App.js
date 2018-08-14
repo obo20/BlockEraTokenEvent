@@ -319,8 +319,9 @@ class App extends Component {
             return(
                 <div style={{
                     width: 100,
-                    height: 80,
+                    height: 79.9,
                     display: 'flex',
+                    marginTop: 0.1,
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderTopLeftRadius: 25,
@@ -342,7 +343,8 @@ class App extends Component {
             return(
                 <div style={{
                     width: 100,
-                    height: 79,
+                    height: 79.9,
+                    marginTop: 0.1,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -415,33 +417,64 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="navbar pure-menu pure-menu-horizontal">
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#FFFFFF'}}>
-                <div >NEXT Society Bar Feed</div>
-                <div>
-                    <Switch checked={this.state.barFilter} label="Bar Filter" onChange={this.toggleBarFilter} />
+            <div style={{display: 'flex', flexDirection:'column', backgroundColor: '#FFFFFF'}}>
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#0c1a2b', color: 'white'}}>
+                    <div style={{marginTop: 5}}>
+                        <Switch checked={this.state.barFilter} label="Bar Filter" onChange={this.toggleBarFilter} />
+                    </div>
+                </div>
+                <div style={{display: 'flex', justifyContent: 'space-between', fontSize: 30, paddingTop: 5, paddingLeft: 20, paddingRight: 20, paddingBottom: 10, marginBottom: 15, backgroundColor: '#FFFFFF'}}>
+                    <div>
+                        Sender
+                    </div>
+                    <div>
+                        NEXT Tokens (2 per drink)
+                    </div>
+                    <div>
+                        Receiver
+                    </div>
                 </div>
             </div>
+
         </nav>
         <main className="container">
           <div className="pure-g">
             <div className="pure-u-1-1">
-              <div style={{marginTop: 10}}>
-                  <div style={{display: 'flex', justifyContent: 'space-between', fontSize: 30, marginBottom: 5}}>
-                      <div>
-                          Sender
-                      </div>
-                      <div>
-                          NEXT Tokens (2 per drink)
-                      </div>
-                      <div>
-                          Receiver
-                      </div>
-                  </div>
+              <div style={{marginTop: 60}}>
                   {transactionList}
               </div>
             </div>
           </div>
         </main>
+          <div style={{position: 'fixed', left: 0, bottom: 0, height: 100, width: '100%', paddingTop: 15, backgroundColor: '#0c1a2b', color: 'white', textAlign: 'center'}}>
+              <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }} >
+                  <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+                      <div style={{
+                          width: 70,
+                          height: 70,
+                          borderRadius: 35,
+                          backgroundColor: '#FFFFFF',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center' }}>
+                          <img src={nextBlockEra}></img>
+                      </div>
+                      <div style={{fontSize: 40}}>
+                          Powered by Pinata - a BlockEra company
+                      </div>
+                      <div style={{
+                          width: 70,
+                          height: 70,
+                          borderRadius: 35,
+                          backgroundColor: '#FFFFFF',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center' }}>
+                          <img src={nextBlockEra}></img>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
     );
     }

@@ -43,8 +43,7 @@ code {
 
 .navbar {
   position: fixed;
-  padding: 5px;
-  background: #0c1a2b;
+  padding: 0px;
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
 }
 
