@@ -61,7 +61,8 @@
     "react-dom": "^15.6.2",
     "react-transition-group": "^2.2.1",
     "truffle-hdwallet-provider": "0.0.3",
-    "web3": "^0.20.7"
+    "web3": "^0.20.7",
+    "web3-provider-engine": "^14.0.6"
   },
   "scripts": {
     "start": "node scripts/start.js",

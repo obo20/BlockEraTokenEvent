@@ -53,6 +53,7 @@ const nextSnail = require('./images/snail.png');
 
 
 const startBlock = 5292900;
+let checkingFlag = false; //makes sure we're not already checking for events
 
 class App extends Component {
     constructor(props) {
@@ -66,6 +67,7 @@ class App extends Component {
 
     this.state = {
         blockNumber: startBlock,
+        lastBlockChecked: startBlock,
         web3: null,
         transactions: [],
         barFilter: false
@@ -116,7 +118,11 @@ class App extends Component {
     }
 
     checkForNewTransactions(contractAtAddress) {
+        if(checkingFlag === true) {
+            return;
+        }
         let event = contractAtAddress.Transfer({},{fromBlock: this.state.blockNumber, toBlock: 'latest'});
+        checkingFlag = true;
         event.get(function(error, result) {
             if(error) {
                 console.log(error);
@@ -134,9 +140,11 @@ class App extends Component {
                     console.log(sorted);
                     this.setState({
                         transactions: sorted,
-                        blockNumber: sorted[sorted.length - 1].blockNumber + 1
+                        blockNumber: sorted[sorted.length - 1].blockNumber + 1,
+                        lastBlockChecked: this.state.blockNumber
                     });
                 }
+                checkingFlag = false;
             }
         }.bind(this));
     }

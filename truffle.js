@@ -5,6 +5,8 @@ const mnemonic = process.env.MNEMONIC;
 const apiKey = process.env.INFURA_API_KEY;
 const Web3 = require("web3");
 const web3 = new Web3();
+const NonceTrackerSubprovider = require("web3-provider-engine/subproviders/nonce-tracker");
+
 
 module.exports = {
     migrations_directory: "./migrations",
@@ -39,7 +41,13 @@ module.exports = {
             gasPrice: web3.toWei("3", "gwei"),
         },
         mainnet: {
-            provider: () => new HDWalletProvider(mnemonic, `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`), 
+            provider: () => {
+                const nonceTracker = new NonceTrackerSubprovider();
+                const wallet = new HDWalletProvider(mnemonic, `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`)
+                wallet.engine._providers.unshift(nonceTracker);
+                nonceTracker.setEngine(wallet.engine);
+                return wallet;
+            },
             gas: 698712,
             gasPrice: web3.toWei("3", "gwei"),
             network_id: "1",
