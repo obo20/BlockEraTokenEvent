@@ -17,7 +17,7 @@ const nextSVS = require('./images/svs.png');
 const nextFarming = require('./images/silo.png');
 const nextWallet = require('./images/wallet.png');
 const barWallet = nextWallets.find((wallet) => {
-    return wallet.id === 'bar';
+    return wallet.id === 100002;
 });
 
 //new stations
