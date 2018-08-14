@@ -2,85 +2,85 @@ export const nextWallets = [
     {
         id: 100001,
         public: "0x055d236063A9f0225E6328C5d37df78d0F0046c5",
-        color: "White",
+        color: "",
         name: "Admin"
     },
     {
         id: 100002,
         public: "0x1c587Bf7C5C0EA26C29E79e921a84Aa8a78c5Ca6",
-        color: "White",
+        color: "",
         name: "Grove Juices"
     },
     {
         id: 100003,
         public: "0x7679f2CD0398b220A0B494B6b51d307A64af9c30",
-        color: "White",
+        color: "",
         name: "Hudl: AI - A"
     },
     {
         id: 100004,
         public: "0xcedbD96Fb87110D8754f0387Ce710A9860E538EE",
-        color: "White",
+        color: "",
         name: "Hudl: AI - B"
     },
     {
         id: 100005,
         public: "0xa8238db1Bb7d9557b420b91aEEbd18190b598fE2",
-        color: "White",
+        color: "",
         name: "Rad Lab: AI"
     },
     {
         id: 100006,
         public: "0xfbB7F13c409B467e0FEFfcB6B63c49BBf011f3bb",
-        color: "White",
+        color: "",
         name: "Emblematic: AR - A"
     },
     {
         id: 100007,
         public: "0x75F8600Ba3bd0BC17D21f852A8484B95e6B398c3",
-        color: "White",
+        color: "",
         name: "Emblematic: AR - B"
     },
     {
         id: 100008,
         public: "0xcA89ecd4665310b2cb2b60B1E6938bA1Cd8c2CAA",
-        color: "White",
+        color: "",
         name: "iEXCEL: AR - A"
     },
     {
         id: 100009,
         public: "0xD7De020433ab76B976a353c1c1b861E3D7302905",
-        color: "White",
+        color: "",
         name: "iEXCEL: AR - B"
     },
     {
         id: 100010,
         public: "0x342ba6E011da1Aed5f36703f48bF1733D134AD9c",
-        color: "White",
+        color: "",
         name: "NET: AR"
     },
     {
         id: 100011,
         public: "0xbf163DBfABa595876BF3130578c7A5CFd174495f",
-        color: "White",
+        color: "",
         name: "Kaneko: AR"
     },
     {
         id: 100012,
         public: "0x269188C0A5913A7B08cA3d2397224fb04B38BeDE",
-        color: "White",
+        color: "",
         name: "BlockEra: Blockchain"
     },
     {
         id: 100013,
         public: "0x3bF5EbB998aFd484ca0FEC456d7CC6680520cfb6",
-        color: "White",
+        color: "",
         name: "Agape Red: Blockchain"
     },
     {
         id: 100014,
         public: "0xD72201EfBeb658CC9205f86DAcB7E9E191F4cBA0",
-        color: "White",
+        color: "",
         name: "UNO: AI"
     },
     {
