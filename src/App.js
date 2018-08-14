@@ -20,6 +20,19 @@ const barWallet = nextWallets.find((wallet) => {
     return wallet.id === 'bar';
 });
 
+//new stations
+const nextAgapeRed = require('./images/agapered.jpg');
+const nextBlockEra = require('./images/blockera.png');
+const nextEmblematic = require('./images/emblematic.jpg');
+const nextGrove = require('./images/grovelogo.jpg');
+const nextHudl = require('./images/hudllogo.png');
+const nextIExcel = require('./images/iexcel.png');
+const nextKaneko = require('./images/kanekologo.png');
+const nextNet = require('./images/netlogo.jpeg');
+const nextRadLab = require('./images/radlablogo.png');
+const nextRegistration = require('./images/registrationlogo.png');
+const nextUNO = require('./images/unologo.png');
+
 //animals
 //new animals
 const nextButterfly = require('./images/butterfly.png');
@@ -52,7 +65,7 @@ const nextMonkey = require('./images/nextMonkey.png');
 const nextSnail = require('./images/snail.png');
 
 
-const startBlock = 5292900;
+const startBlock = 6147340;
 let checkingFlag = false; //makes sure we're not already checking for events
 
 class App extends Component {
@@ -215,18 +228,34 @@ class App extends Component {
 
     getAddressImage(walletName) {
         switch (walletName) {
-            case 'The Bar':
-                return nextMartini;
-            case 'CoinMarkets':
-                return nextCoinMarkets;
-            case 'ICOs':
-                return nextICOs;
-            case 'Simple Vet Solutions':
-                return nextSVS;
-            case 'CryptoFarming':
-                return nextFarming;
-            case 'Digital Wallet Help':
-                return nextWallet;
+            case 'Admin':
+                return nextBlockEra;
+            case 'Grove Juices':
+                return nextGrove;
+            case 'Hudl: AI - A':
+                return nextHudl;
+            case 'Hudl: AI - B':
+                return nextHudl;
+            case 'Rad Lab: AI':
+                return nextRadLab;
+            case 'Emblematic: AR - A':
+                return nextEmblematic;
+            case 'Emblematic: AR - B':
+                return nextEmblematic;
+            case 'iEXCEL: AR - A':
+                return nextIExcel;
+            case 'iEXCEL: AR - B':
+                return nextIExcel;
+            case 'NET: AR':
+                return nextNet;
+            case 'Kaneko: AR':
+                return nextKaneko;
+            case 'BlockEra: Blockchain':
+                return nextBlockEra;
+            case 'Agape Red: Blockchain':
+                return nextAgapeRed;
+            case 'UNO: AI':
+                return nextUNO;
             case 'Butterfly':
                 return nextButterfly;
             case 'Raccoon':

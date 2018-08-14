@@ -1,0 +1,1531 @@
+{
+  "contractName": "LoanCreator",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_lender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_borrower",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_valueLent",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_interestDesired",
+          "type": "uint256"
+        }
+      ],
+      "name": "LoanCreated",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_borrower",
+          "type": "address"
+        },
+        {
+          "name": "_interestDesired",
+          "type": "uint256"
+        }
+      ],
+      "name": "createLoan",
+      "outputs": [
+        {
+          "name": "_loanAddress",
+          "type": "address"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506106bc806100206000396000f3006080604052600436106100405763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663e75da5988114610045575b600080fd5b61006973ffffffffffffffffffffffffffffffffffffffff60043516602435610092565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b600080343385856100a1610153565b73ffffffffffffffffffffffffffffffffffffffff93841681529190921660208201526040808201929092529051908190036060019082f0801580156100eb573d6000803e3d6000fd5b506040805173ffffffffffffffffffffffffffffffffffffffff80841682523460208301528183018890529151929450908716925033917f96992686c0b1cf8121575bfa4f8ebf796a1ca1d527594f879d4ac6a7988d7b5e9181900360600190a39392505050565b60405161052d80610164833901905600608060405260405160608061052d833981016040908152815160208301519190920151600160a060020a03808416908316141561003b57600080fd5b6000341161004857600080fd5b60008054600160a060020a03948516600160a060020a0319918216179091556001805493909416921691909117909155346002556003556005805460ff19169055610495806100986000396000f3006080604052600436106100b95763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166307c2ffbb81146100be57806312065fe0146100ee578063216340c31461011557806328a117021461012a57806339f1412a1461013f578063573300dd146101545780636d59f4c7146101695780637df1f1b9146101925780638da5cb5b146101d0578063bb4e7b54146101e5578063c4c77e25146101fa578063d8d797001461020f575b600080fd5b3480156100ca57600080fd5b506100ec73ffffffffffffffffffffffffffffffffffffffff60043516610217565b005b3480156100fa57600080fd5b506101036102b1565b60408051918252519081900360200190f35b34801561012157600080fd5b506101036102b6565b34801561013657600080fd5b506101036102bc565b34801561014b57600080fd5b506101036102ca565b34801561016057600080fd5b506101036102d0565b34801561017557600080fd5b5061017e6102d6565b604080519115158252519081900360200190f35b34801561019e57600080fd5b506101a76102df565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156101dc57600080fd5b506101a76102fb565b3480156101f157600080fd5b506100ec610317565b34801561020657600080fd5b506100ec6103a8565b610103610429565b60005473ffffffffffffffffffffffffffffffffffffffff16331461023b57600080fd5b6000805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff831690811790915560408051338152602081019290925280517f8934ce4adea8d9ce0d714d2c22b86790e41b7731c84b926fbbdc1d40ff6533c99281900390910190a150565b303190565b60045481565b600454600354600254010390565b60035481565b60025481565b60055460ff1681565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff16331461033b57600080fd5b60055460ff16151560011461034f57600080fd5b600030311161035d57600080fd5b6000805460405173ffffffffffffffffffffffffffffffffffffffff90911691303180156108fc02929091818181858888f193505050501580156103a5573d6000803e3d6000fd5b50565b60055460ff16156103b857600080fd5b6002543031146103c757600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff1633146103eb57600080fd5b600254604051339180156108fc02916000818181858888f19350505050158015610419573d6000803e3d6000fd5b506005805460ff19166001179055565b60055460009060ff16151560011461044057600080fd5b6104486102bc565b34111561045457600080fd5b60048054340190556104646102bc565b9050905600a165627a7a7230582023f9006652b96c058cbe6604e766d79be764d4668065b2a96a6b8e377cebce530029a165627a7a7230582066a216efb199e934a64bbbf627766a237797c67c751cf4db098f960d8c6428e30029",
+  "deployedBytecode": "0x6080604052600436106100405763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663e75da5988114610045575b600080fd5b61006973ffffffffffffffffffffffffffffffffffffffff60043516602435610092565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b600080343385856100a1610153565b73ffffffffffffffffffffffffffffffffffffffff93841681529190921660208201526040808201929092529051908190036060019082f0801580156100eb573d6000803e3d6000fd5b506040805173ffffffffffffffffffffffffffffffffffffffff80841682523460208301528183018890529151929450908716925033917f96992686c0b1cf8121575bfa4f8ebf796a1ca1d527594f879d4ac6a7988d7b5e9181900360600190a39392505050565b60405161052d80610164833901905600608060405260405160608061052d833981016040908152815160208301519190920151600160a060020a03808416908316141561003b57600080fd5b6000341161004857600080fd5b60008054600160a060020a03948516600160a060020a0319918216179091556001805493909416921691909117909155346002556003556005805460ff19169055610495806100986000396000f3006080604052600436106100b95763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166307c2ffbb81146100be57806312065fe0146100ee578063216340c31461011557806328a117021461012a57806339f1412a1461013f578063573300dd146101545780636d59f4c7146101695780637df1f1b9146101925780638da5cb5b146101d0578063bb4e7b54146101e5578063c4c77e25146101fa578063d8d797001461020f575b600080fd5b3480156100ca57600080fd5b506100ec73ffffffffffffffffffffffffffffffffffffffff60043516610217565b005b3480156100fa57600080fd5b506101036102b1565b60408051918252519081900360200190f35b34801561012157600080fd5b506101036102b6565b34801561013657600080fd5b506101036102bc565b34801561014b57600080fd5b506101036102ca565b34801561016057600080fd5b506101036102d0565b34801561017557600080fd5b5061017e6102d6565b604080519115158252519081900360200190f35b34801561019e57600080fd5b506101a76102df565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156101dc57600080fd5b506101a76102fb565b3480156101f157600080fd5b506100ec610317565b34801561020657600080fd5b506100ec6103a8565b610103610429565b60005473ffffffffffffffffffffffffffffffffffffffff16331461023b57600080fd5b6000805473ffffffffffffffffffffffffffffffffffffffff191673ffffffffffffffffffffffffffffffffffffffff831690811790915560408051338152602081019290925280517f8934ce4adea8d9ce0d714d2c22b86790e41b7731c84b926fbbdc1d40ff6533c99281900390910190a150565b303190565b60045481565b600454600354600254010390565b60035481565b60025481565b60055460ff1681565b60015473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff16331461033b57600080fd5b60055460ff16151560011461034f57600080fd5b600030311161035d57600080fd5b6000805460405173ffffffffffffffffffffffffffffffffffffffff90911691303180156108fc02929091818181858888f193505050501580156103a5573d6000803e3d6000fd5b50565b60055460ff16156103b857600080fd5b6002543031146103c757600080fd5b60015473ffffffffffffffffffffffffffffffffffffffff1633146103eb57600080fd5b600254604051339180156108fc02916000818181858888f19350505050158015610419573d6000803e3d6000fd5b506005805460ff19166001179055565b60055460009060ff16151560011461044057600080fd5b6104486102bc565b34111561045457600080fd5b60048054340190556104646102bc565b9050905600a165627a7a7230582023f9006652b96c058cbe6604e766d79be764d4668065b2a96a6b8e377cebce530029a165627a7a7230582066a216efb199e934a64bbbf627766a237797c67c751cf4db098f960d8c6428e30029",
+  "sourceMap": "83:599:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;83:599:3;;;;;;;",
+  "deployedSourceMap": "83:599:3:-;;;;;;;;;;;;;;;;;;;;;;;352:328;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;450:17;484:12;516:9;527:10;539:9;550:16;499:68;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;577:72:3;;;;;;;;;621:9;577:72;;;;;;;;;;;;499:68;;-1:-1:-1;577:72:3;;;;-1:-1:-1;589:10:3;;577:72;;;;;;;;;666:7;352:328;-1:-1:-1;;;352:328:3:o;83:599::-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n\nimport \"./Loan.sol\";\n\n//factory used for creations Loans\ncontract LoanCreator {\n    \n    //event emission for web3 to track\n    event LoanCreated(\n        address indexed _lender,\n        address  indexed _borrower,\n        address _contractAddress,\n        uint _valueLent,\n        uint _interestDesired\n    );\n    \n    \n    function createLoan(address _borrower, uint _interestDesired)\n    public\n    payable\n    returns (Loan _loanAddress) \n    {\n        Loan newLoan = (new Loan).value(msg.value)(msg.sender, _borrower, _interestDesired);\n        LoanCreated(msg.sender, _borrower, newLoan, msg.value, _interestDesired);\n        return newLoan;\n    }\n}",
+  "sourcePath": "/Users/mattober/Repos/EthereumDev/BlockEra/TokenEvent/contracts/LoanCreator.sol",
+  "ast": {
+    "absolutePath": "/Users/mattober/Repos/EthereumDev/BlockEra/TokenEvent/contracts/LoanCreator.sol",
+    "exportedSymbols": {
+      "LoanCreator": [
+        419
+      ]
+    },
+    "id": 420,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 368,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "absolutePath": "/Users/mattober/Repos/EthereumDev/BlockEra/TokenEvent/contracts/Loan.sol",
+        "file": "./Loan.sol",
+        "id": 369,
+        "nodeType": "ImportDirective",
+        "scope": 420,
+        "sourceUnit": 367,
+        "src": "26:20:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          366
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 419,
+        "linearizedBaseContracts": [
+          419
+        ],
+        "name": "LoanCreator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 381,
+            "name": "LoanCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 380,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 371,
+                  "indexed": true,
+                  "name": "_lender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "181:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 370,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "181:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 373,
+                  "indexed": true,
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "214:26:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 372,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "214:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 375,
+                  "indexed": false,
+                  "name": "_contractAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "250:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 374,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 377,
+                  "indexed": false,
+                  "name": "_valueLent",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "284:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 376,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 379,
+                  "indexed": false,
+                  "name": "_interestDesired",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "309:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 378,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "309:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "171:165:3"
+            },
+            "src": "154:183:3"
+          },
+          {
+            "body": {
+              "id": 417,
+              "nodeType": "Block",
+              "src": "474:206:3",
+              "statements": [
+                {
+                  "assignments": [
+                    391
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 391,
+                      "name": "newLoan",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 418,
+                      "src": "484:12:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Loan_$366",
+                        "typeString": "contract Loan"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 390,
+                        "name": "Loan",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 366,
+                        "src": "484:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Loan_$366",
+                          "typeString": "contract Loan"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 404,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 399,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 612,
+                          "src": "527:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 400,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "527:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 401,
+                        "name": "_borrower",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 383,
+                        "src": "539:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 402,
+                        "name": "_interestDesired",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 385,
+                        "src": "550:16:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 396,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 612,
+                            "src": "516:3:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 397,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "516:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "components": [
+                            {
+                              "argumentTypes": null,
+                              "id": 393,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "NewExpression",
+                              "src": "500:8:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_creation_payable$_t_address_$_t_address_$_t_uint256_$returns$_t_contract$_Loan_$366_$",
+                                "typeString": "function (address,address,uint256) payable returns (contract Loan)"
+                              },
+                              "typeName": {
+                                "contractScope": null,
+                                "id": 392,
+                                "name": "Loan",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 366,
+                                "src": "504:4:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Loan_$366",
+                                  "typeString": "contract Loan"
+                                }
+                              }
+                            }
+                          ],
+                          "id": 394,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "TupleExpression",
+                          "src": "499:10:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_address_$_t_uint256_$returns$_t_contract$_Loan_$366_$",
+                            "typeString": "function (address,address,uint256) payable returns (contract Loan)"
+                          }
+                        },
+                        "id": 395,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "499:16:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_setvalue_nonpayable$_t_uint256_$returns$_t_function_creation_payable$_t_address_$_t_address_$_t_uint256_$returns$_t_contract$_Loan_$366_$value_$",
+                          "typeString": "function (uint256) returns (function (address,address,uint256) payable returns (contract Loan))"
+                        }
+                      },
+                      "id": 398,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "499:27:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_payable$_t_address_$_t_address_$_t_uint256_$returns$_t_contract$_Loan_$366_$value",
+                        "typeString": "function (address,address,uint256) payable returns (contract Loan)"
+                      }
+                    },
+                    "id": 403,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "499:68:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Loan_$366",
+                      "typeString": "contract Loan"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "484:83:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 406,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 612,
+                          "src": "589:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 407,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "589:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 408,
+                        "name": "_borrower",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 383,
+                        "src": "601:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 409,
+                        "name": "newLoan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 391,
+                        "src": "612:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Loan_$366",
+                          "typeString": "contract Loan"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 410,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 612,
+                          "src": "621:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 411,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "621:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 412,
+                        "name": "_interestDesired",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 385,
+                        "src": "632:16:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_Loan_$366",
+                          "typeString": "contract Loan"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 405,
+                      "name": "LoanCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 381,
+                      "src": "577:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,address,address,uint256,uint256)"
+                      }
+                    },
+                    "id": 413,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "577:72:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 414,
+                  "nodeType": "ExpressionStatement",
+                  "src": "577:72:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 415,
+                    "name": "newLoan",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 391,
+                    "src": "666:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Loan_$366",
+                      "typeString": "contract Loan"
+                    }
+                  },
+                  "functionReturnParameters": 389,
+                  "id": 416,
+                  "nodeType": "Return",
+                  "src": "659:14:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 418,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createLoan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 386,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 383,
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "372:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 382,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "372:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 385,
+                  "name": "_interestDesired",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "391:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 384,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "391:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "371:42:3"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 389,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 388,
+                  "name": "_loanAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "450:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Loan_$366",
+                    "typeString": "contract Loan"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 387,
+                    "name": "Loan",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 366,
+                    "src": "450:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Loan_$366",
+                      "typeString": "contract Loan"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "449:19:3"
+            },
+            "scope": 419,
+            "src": "352:328:3",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 420,
+        "src": "83:599:3"
+      }
+    ],
+    "src": "0:682:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mattober/Repos/EthereumDev/BlockEra/TokenEvent/contracts/LoanCreator.sol",
+    "exportedSymbols": {
+      "LoanCreator": [
+        419
+      ]
+    },
+    "id": 420,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 368,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:3"
+      },
+      {
+        "absolutePath": "/Users/mattober/Repos/EthereumDev/BlockEra/TokenEvent/contracts/Loan.sol",
+        "file": "./Loan.sol",
+        "id": 369,
+        "nodeType": "ImportDirective",
+        "scope": 420,
+        "sourceUnit": 367,
+        "src": "26:20:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          366
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 419,
+        "linearizedBaseContracts": [
+          419
+        ],
+        "name": "LoanCreator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 381,
+            "name": "LoanCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 380,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 371,
+                  "indexed": true,
+                  "name": "_lender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "181:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 370,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "181:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 373,
+                  "indexed": true,
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "214:26:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 372,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "214:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 375,
+                  "indexed": false,
+                  "name": "_contractAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "250:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 374,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 377,
+                  "indexed": false,
+                  "name": "_valueLent",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "284:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 376,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 379,
+                  "indexed": false,
+                  "name": "_interestDesired",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 381,
+                  "src": "309:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 378,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "309:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "171:165:3"
+            },
+            "src": "154:183:3"
+          },
+          {
+            "body": {
+              "id": 417,
+              "nodeType": "Block",
+              "src": "474:206:3",
+              "statements": [
+                {
+                  "assignments": [
+                    391
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 391,
+                      "name": "newLoan",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 418,
+                      "src": "484:12:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Loan_$366",
+                        "typeString": "contract Loan"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 390,
+                        "name": "Loan",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 366,
+                        "src": "484:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Loan_$366",
+                          "typeString": "contract Loan"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 404,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 399,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 612,
+                          "src": "527:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 400,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "527:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 401,
+                        "name": "_borrower",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 383,
+                        "src": "539:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 402,
+                        "name": "_interestDesired",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 385,
+                        "src": "550:16:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 396,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 612,
+                            "src": "516:3:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 397,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "516:9:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "components": [
+                            {
+                              "argumentTypes": null,
+                              "id": 393,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "NewExpression",
+                              "src": "500:8:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_creation_payable$_t_address_$_t_address_$_t_uint256_$returns$_t_contract$_Loan_$366_$",
+                                "typeString": "function (address,address,uint256) payable returns (contract Loan)"
+                              },
+                              "typeName": {
+                                "contractScope": null,
+                                "id": 392,
+                                "name": "Loan",
+                                "nodeType": "UserDefinedTypeName",
+                                "referencedDeclaration": 366,
+                                "src": "504:4:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Loan_$366",
+                                  "typeString": "contract Loan"
+                                }
+                              }
+                            }
+                          ],
+                          "id": 394,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "TupleExpression",
+                          "src": "499:10:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_address_$_t_uint256_$returns$_t_contract$_Loan_$366_$",
+                            "typeString": "function (address,address,uint256) payable returns (contract Loan)"
+                          }
+                        },
+                        "id": 395,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "499:16:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_setvalue_nonpayable$_t_uint256_$returns$_t_function_creation_payable$_t_address_$_t_address_$_t_uint256_$returns$_t_contract$_Loan_$366_$value_$",
+                          "typeString": "function (uint256) returns (function (address,address,uint256) payable returns (contract Loan))"
+                        }
+                      },
+                      "id": 398,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "499:27:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_payable$_t_address_$_t_address_$_t_uint256_$returns$_t_contract$_Loan_$366_$value",
+                        "typeString": "function (address,address,uint256) payable returns (contract Loan)"
+                      }
+                    },
+                    "id": 403,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "499:68:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Loan_$366",
+                      "typeString": "contract Loan"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "484:83:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 406,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 612,
+                          "src": "589:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 407,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "589:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 408,
+                        "name": "_borrower",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 383,
+                        "src": "601:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 409,
+                        "name": "newLoan",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 391,
+                        "src": "612:7:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Loan_$366",
+                          "typeString": "contract Loan"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 410,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 612,
+                          "src": "621:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 411,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "621:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 412,
+                        "name": "_interestDesired",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 385,
+                        "src": "632:16:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_Loan_$366",
+                          "typeString": "contract Loan"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 405,
+                      "name": "LoanCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 381,
+                      "src": "577:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,address,address,uint256,uint256)"
+                      }
+                    },
+                    "id": 413,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "577:72:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 414,
+                  "nodeType": "ExpressionStatement",
+                  "src": "577:72:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 415,
+                    "name": "newLoan",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 391,
+                    "src": "666:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Loan_$366",
+                      "typeString": "contract Loan"
+                    }
+                  },
+                  "functionReturnParameters": 389,
+                  "id": 416,
+                  "nodeType": "Return",
+                  "src": "659:14:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 418,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createLoan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 386,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 383,
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "372:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 382,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "372:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 385,
+                  "name": "_interestDesired",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "391:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 384,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "391:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "371:42:3"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 389,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 388,
+                  "name": "_loanAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 418,
+                  "src": "450:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Loan_$366",
+                    "typeString": "contract Loan"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 387,
+                    "name": "Loan",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 366,
+                    "src": "450:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Loan_$366",
+                      "typeString": "contract Loan"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "449:19:3"
+            },
+            "scope": 419,
+            "src": "352:328:3",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 420,
+        "src": "83:599:3"
+      }
+    ],
+    "src": "0:682:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-08-09T21:12:37.069Z"
+}
