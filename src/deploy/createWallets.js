@@ -32,7 +32,7 @@ module.exports = (callback) => {
       fs.appendFileSync(FILENAME, JSON.stringify(account));
       fs.appendFileSync(PRIVATE_FILENAME, `${account.private}, ${account.color} ${account.name}`);
       (index != COLORS.length * NAMES.length) ? fs.appendFileSync(FILENAME, ',\n') : '';
-      (index != COLORS.length * NAMES.length) ? fs.appendFileSync(PRIVATE_FILENAME, ',\n') : '';
+      (index != COLORS.length * NAMES.length) ? fs.appendFileSync(PRIVATE_FILENAME, ';\n') : '';
     });
     console.log(`wrote ${NAMES.length} keys to file ${FILENAME}`);
   });

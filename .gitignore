@@ -3,3 +3,4 @@
 build_webpack
 walletPrivateKeys.json
 wallets.json
+fundedAccounts.json
