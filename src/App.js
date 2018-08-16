@@ -23,6 +23,7 @@ const barWallet = nextWallets.find((wallet) => {
 //new stations
 const nextAgapeRed = require('./images/agapered.jpg');
 const nextBlockEra = require('./images/blockera.png');
+const nextPinataReverse = require('./images/pinatareverse.png');
 const nextEmblematic = require('./images/emblematic.jpg');
 const nextGrove = require('./images/grovelogo.jpg');
 const nextHudl = require('./images/hudllogo.png');
@@ -470,7 +471,7 @@ class App extends Component {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center' }}>
-                          <img src={nextBlockEra}></img>
+                          <img src={nextPinataReverse}></img>
                       </div>
                   </div>
               </div>
